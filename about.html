@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aernest Lean Rivera — Hardware Engineer & Builder</title>
+<meta name="description" content="Portfolio of Aernest Lean Rivera — Licensed Electronics Engineer, Senior Hardware Design Engineer, and builder of web & AI products." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%2336e0c4'/%3E%3C/svg%3E" />
+<!-- SEO / social share — replace BASE_URL with your deployed domain -->
+<link rel="canonical" href="https://aernest-rivera.vercel.app/about.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Aernest Lean Rivera — Portfolio" />
+<meta property="og:title" content="Aernest Lean Rivera — Hardware Engineer & Builder" />
+<meta property="og:description" content="Licensed Electronics Engineer and builder — IoT/PCB hardware design plus web & AI products. See the Tester.io showcase and selected PCB work." />
+<meta property="og:url" content="https://aernest-rivera.vercel.app/about.html" />
+<meta property="og:image" content="https://aernest-rivera.vercel.app/assets/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aernest Lean Rivera — Hardware Engineer & Builder" />
+<meta name="twitter:description" content="Licensed Electronics Engineer and builder — IoT/PCB hardware plus web & AI products." />
+<meta name="twitter:image" content="https://aernest-rivera.vercel.app/assets/og-cover.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  /* ============ Design system — Premium minimal · teal-on-slate · mono-technical ============ */
+  :root{
+    --ink:#0c1018;            /* base canvas */
+    --ink-2:#10151f;          /* elevated surface */
+    --ink-3:#151c28;          /* floating surface */
+    --line:rgba(255,255,255,.06);
+    --line-2:rgba(255,255,255,.11);
+    --text:#eceff5;
+    --muted:#868fa1;
+    --faint:#767f91;          /* AA-compliant (~4.6:1 on --ink) */
+    --signal:#3ee0c4;         /* the single accent */
+    --signal-ink:#04140f;
+    --signal-soft:rgba(62,224,196,.12);
+    --sans:'Inter',system-ui,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --maxw:1080px;
+    --radius:14px;
+    --shadow:0 24px 60px -34px rgba(0,0,0,.78);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--ink);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative}
+  ::selection{background:var(--signal);color:var(--signal-ink)}
+  /* skip link (a11y) */
+  .skip{position:absolute;left:14px;top:-60px;z-index:200;font-family:var(--mono);font-size:.78rem;background:var(--signal);color:var(--signal-ink);
+    padding:10px 16px;border-radius:8px;transition:top .2s ease}
+  .skip:focus{top:14px;outline:2px solid #fff;outline-offset:2px}
+  /* faint grain */
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  /* one restrained glow */
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(48% 38% at 12% -6%,rgba(62,224,196,.10),transparent 62%),radial-gradient(40% 36% at 102% -2%,rgba(62,224,196,.05),transparent 58%)}
+  nav,main,footer{position:relative;z-index:1}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--sans);line-height:1.08;letter-spacing:-.03em;font-weight:600}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  section{padding:108px 0;position:relative}
+  .wrap > section + section{border-top:1px solid var(--line)}
+
+  /* kicker / section heading */
+  .eyebrow{font-family:var(--mono);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--signal);font-weight:500;display:inline-flex;align-items:center;gap:9px}
+  .eyebrow::before{content:"//";opacity:.55;font-weight:700;letter-spacing:0}
+  .sec-title{font-size:clamp(1.8rem,4.2vw,2.8rem);margin:16px 0 12px;font-weight:600;letter-spacing:-.035em}
+  .sec-sub{color:var(--muted);max-width:58ch;font-size:1rem}
+
+  /* ============ Nav ============ */
+  nav{position:sticky;top:0;backdrop-filter:blur(16px);background:rgba(12,16,24,.72);border-bottom:1px solid var(--line);z-index:50}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:var(--mono);font-weight:700;font-size:.92rem;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px var(--signal-soft)}
+  .nav-links{display:flex;gap:2px;list-style:none}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 12px;border-radius:8px;transition:color .2s ease,background .2s ease}
+  .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+  .nav-links a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .nav-links a.active{color:var(--signal)}
+  .nav-links a.active::after{content:"";display:block;height:2px;border-radius:2px;background:var(--signal);margin-top:5px}
+
+  /* ============ Hero ============ */
+  .hero{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;padding-top:76px;padding-bottom:44px;border-top:none!important}
+  .hero-photo{position:relative;justify-self:center;order:-1}
+  .hero-photo img{width:min(248px,72vw);aspect-ratio:2/3;object-fit:cover;object-position:center top;border-radius:16px;border:1px solid var(--line-2);box-shadow:var(--shadow);filter:saturate(1.02) contrast(1.02)}
+  .hero-photo::after{content:"";position:absolute;inset:0;border-radius:16px;background:linear-gradient(to top,rgba(12,16,24,.5),transparent 48%);pointer-events:none}
+  .hero h1{font-size:clamp(2.6rem,8vw,4.6rem);font-weight:700;letter-spacing:-.045em;line-height:1.02;margin-top:18px}
+  .hero h1 .grad{color:var(--signal)}
+  .role{font-family:var(--mono);color:var(--signal);font-size:.8rem;letter-spacing:.01em;margin-top:18px}
+  .bio{color:var(--muted);margin-top:18px;max-width:52ch;font-size:1.02rem}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;padding:13px 22px;border-radius:10px;display:inline-flex;align-items:center;gap:8px;
+    transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease;border:1px solid transparent;cursor:pointer}
+  .btn:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+  .btn-primary{background:var(--signal);color:var(--signal-ink);box-shadow:0 16px 34px -16px rgba(62,224,196,.55)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 40px -16px rgba(62,224,196,.65)}
+  .btn-primary:active{transform:translateY(0)}
+  .btn-ghost{border-color:var(--line-2);color:var(--text);background:transparent}
+  .btn-ghost:hover{transform:translateY(-2px);background:rgba(255,255,255,.04);border-color:var(--signal)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:34px}
+  .chip{font-family:var(--mono);font-size:.72rem;letter-spacing:.01em;padding:9px 13px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--muted);display:flex;align-items:center;gap:7px}
+  .chip b{color:var(--signal);font-weight:700}
+  a.chip{transition:border-color .2s ease,color .2s ease,transform .2s ease}
+  a.chip:hover{border-color:var(--signal);color:var(--text);transform:translateY(-1px)}
+  a.chip:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
+  /* ============ Skills — spec-table grid ============ */
+  .skill-grid{display:grid;grid-template-columns:1fr;gap:1px;margin-top:42px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .skill-card{background:var(--ink);padding:30px}
+  .skill-card h3{font-family:var(--mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:500;color:var(--text);display:flex;align-items:center;gap:10px;margin-bottom:18px}
+  .skill-card h3 span{color:var(--signal);font-size:.95rem;line-height:1}
+  .tags{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{font-family:var(--mono);font-size:.74rem;padding:6px 10px;border-radius:6px;background:transparent;border:1px solid var(--line-2);color:var(--muted);letter-spacing:.01em}
+
+  /* ============ Experience ============ */
+  .exp-grid{display:grid;gap:16px;margin-top:42px}
+  .glass{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;position:relative;overflow:hidden;transition:border-color .25s ease,transform .25s ease}
+  .glass:hover{border-color:var(--line-2);transform:translateY(-2px)}
+  .glass .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline}
+  .glass h3{font-size:1.1rem;font-weight:600;letter-spacing:-.02em}
+  .glass .co{font-family:var(--mono);color:var(--signal);font-size:.8rem;margin-top:5px;letter-spacing:.01em}
+  .glass .when{font-family:var(--mono);font-size:.74rem;color:var(--faint);white-space:nowrap;letter-spacing:.02em}
+  .glass .badge{display:inline-block;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--signal);background:var(--signal-soft);border:1px solid rgba(62,224,196,.22);padding:4px 10px;border-radius:999px;margin-top:14px}
+  .glass ul{margin-top:16px;padding-left:0;list-style:none;display:grid;gap:10px}
+  .glass li{position:relative;padding-left:20px;color:var(--muted);font-size:.95rem}
+  .glass li::before{content:"";position:absolute;left:0;top:.78em;width:9px;height:1px;background:var(--signal);opacity:.8}
+
+  /* ============ Projects ============ */
+  .reel-frame{margin-top:36px;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-2);box-shadow:var(--shadow);position:relative;background:#000}
+  .reel-frame video{display:block;width:100%;height:auto}
+  .reel-frame .reel-tag{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text);background:rgba(12,16,24,.7);backdrop-filter:blur(6px);border:1px solid var(--line);padding:5px 11px;border-radius:999px}
+  .proj-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:28px}
+  .proj-card{display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--ink-2);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+  .proj-card:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:var(--shadow)}
+  .proj-card:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+  .shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:#0a0d14}
+  .shot img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s ease}
+  .proj-card:hover .shot img{transform:scale(1.03)}
+  .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,16,24,.55),transparent 58%)}
+  .proj-body{padding:18px 20px}
+  .proj-body h3{font-size:1.05rem;font-weight:600}
+  .proj-body p{color:var(--muted);font-size:.88rem;margin-top:6px}
+  .proj-meta{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+  .proj-meta .stack{font-family:var(--mono);font-size:.72rem;color:var(--faint);letter-spacing:.02em}
+  .proj-meta .arrow{font-family:var(--mono);font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;transition:transform .2s ease,color .2s ease}
+  .proj-card:hover .arrow{color:var(--signal);transform:translateX(2px)}
+
+  /* PCB / hardware cards */
+  .pcb-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:var(--ink-2);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}
+  .pcb-card:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:var(--shadow)}
+  .pcb-card .shot{aspect-ratio:16/11;background:radial-gradient(circle at 50% 35%,#1b2331,#0a0e16)}
+  .pcb-card .shot img{object-fit:contain;object-position:center;padding:8px;transition:transform .5s ease}
+  .pcb-card:hover .shot img{transform:scale(1.02)}
+  .pcb-card .shot::after{display:none}
+  .pcb-body{padding:18px 20px}
+  .pcb-body h3{font-size:1.02rem;font-weight:600}
+  .pcb-body p{color:var(--muted);font-size:.86rem;margin-top:6px}
+  .pcb-body .stack{font-family:var(--mono);font-size:.72rem;color:var(--signal);letter-spacing:.02em}
+  .pcb-meta{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .pcb-req{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap;transition:color .2s ease,transform .2s ease}
+  .pcb-req:hover{color:var(--signal);transform:translateX(2px)}
+  .pcb-req:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+
+  /* ============ Education ============ */
+  .edu-grid{display:grid;gap:16px;margin-top:42px;grid-template-columns:1fr}
+  .edu-card{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px}
+  .edu-card .yr{font-family:var(--mono);color:var(--signal);font-weight:500;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
+  .edu-card h3{font-size:1.1rem;margin:8px 0 4px;font-weight:600}
+  .edu-card p{color:var(--muted);font-size:.95rem}
+  .edu-card .certs{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+
+  /* ============ Contact / CTA ============ */
+  .cta-panel{background:var(--ink-2);border:1px solid var(--line-2);border-radius:20px;padding:56px 32px;text-align:center;position:relative;overflow:hidden}
+  .cta-panel::before{content:"";position:absolute;left:50%;top:-40%;width:120%;height:120%;transform:translateX(-50%);pointer-events:none;
+    background:radial-gradient(40% 40% at 50% 0%,rgba(62,224,196,.12),transparent 60%)}
+  .cta-panel > *{position:relative}
+  .cta-panel h2{font-size:clamp(1.9rem,5vw,2.8rem);font-weight:600;letter-spacing:-.035em}
+  .cta-panel p{color:var(--muted);max-width:48ch;margin:14px auto 0}
+  .socials{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:30px}
+  .social{font-family:var(--mono);font-size:.78rem;letter-spacing:.01em;padding:12px 18px;border-radius:10px;border:1px solid var(--line-2);background:transparent;color:var(--text);
+    transition:transform .2s ease,background .2s ease,border-color .2s ease}
+  .social:hover{transform:translateY(-2px);background:var(--signal-soft);border-color:var(--signal)}
+  .social:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+  footer{border-top:1px solid var(--line);font-family:var(--mono)}
+  .foot-inner{max-width:var(--maxw);margin:0 auto;padding:44px 28px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;justify-content:space-between}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:700;color:var(--text);letter-spacing:-.01em}
+  .foot-brand .dot{width:8px;height:8px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px var(--signal-soft)}
+  .foot-nav{display:flex;flex-wrap:wrap;gap:4px}
+  .foot-nav a{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 10px;border-radius:7px;transition:color .2s ease,background .2s ease}
+  .foot-nav a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+  .foot-nav a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .foot-social{display:flex;gap:8px}
+  .foot-social a{width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line-2);border-radius:9px;color:var(--muted);font-size:.78rem;transition:color .2s ease,border-color .2s ease,transform .2s ease}
+  .foot-social a:hover{color:var(--signal);border-color:var(--signal);transform:translateY(-2px)}
+  .foot-social a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .foot-copy{border-top:1px solid var(--line);padding:18px 28px;text-align:center;color:var(--faint);font-size:.7rem;letter-spacing:.04em}
+
+  /* ============ Scroll reveal — subtle ============ */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+  /* ============ Responsive ============ */
+  @media(min-width:720px){
+    .skill-grid{grid-template-columns:repeat(3,1fr)}
+    .proj-grid{grid-template-columns:repeat(2,1fr)}
+    .edu-grid{grid-template-columns:3fr 2fr}
+  }
+  @media(min-width:880px){
+    .hero{grid-template-columns:1.25fr .85fr;gap:56px}
+    .hero-photo{order:1;justify-self:end}
+    .hero-photo img{width:min(300px,100%)}
+    .hero-text{order:0}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ NAV (shared, About active) ============ -->
+<nav aria-label="Primary">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="dot"></span>Aernest&nbsp;Rivera</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active" aria-current="page">About</a></li>
+      <li><a href="about.html#projects">Projects</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+<div class="wrap">
+
+  <!-- ============ 1. HERO ============ -->
+  <section class="hero" id="top">
+    <div class="hero-text reveal">
+      <span class="eyebrow">Portfolio</span>
+      <h1>Aernest&nbsp;Lean<br><span class="grad">Rivera</span></h1>
+      <p class="role">Trainee @ Arca PH · Senior Hardware Design Engineer · Licensed Electronics Engineer</p>
+      <p class="bio">I'm a licensed Electronics Engineer who designs IoT hardware end-to-end — and I'm <b style="color:var(--text)">now training at Arca PH</b>, where I build web &amp; AI products. This portfolio highlights <b style="color:var(--text)">Tester.io</b>, a full product site and a suite of working AI tools I designed and shipped during the program.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="assets/Resume_Rivera.pdf" target="_blank" rel="noopener noreferrer">View Résumé ↗</a>
+        <a class="btn btn-ghost" href="#projects">See Projects</a>
+      </div>
+      <div class="chips">
+        <a class="chip" href="#experience"><b>Now</b> training @ Arca PH</a>
+        <a class="chip" href="#hardware"><b>4+</b> yrs hardware design</a>
+        <a class="chip" href="#projects"><b>6</b> shipped web/AI builds</a>
+        <span class="chip"><b>PRC</b> Licensed ECE &amp; ECT</span>
+        <span class="chip"><b>LoRaWAN</b> certified</span>
+      </div>
+    </div>
+    <div class="hero-photo reveal">
+      <img src="assets/profile.jpg" width="800" height="1200" alt="Portrait of Aernest Lean Rivera" />
+    </div>
+  </section>
+
+  <!-- ============ 2. SKILLS ============ -->
+  <section id="skills">
+    <div class="reveal">
+      <span class="eyebrow">Skills</span>
+      <h2 class="sec-title">What I work with</h2>
+      <p class="sec-sub">A hardware engineer's discipline applied across the stack — from embedded firmware to the front end of the products I ship.</p>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card reveal">
+        <h3><span>◑</span>Frontend</h3>
+        <div class="tags">
+          <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
+          <span class="tag">Responsive UI</span><span class="tag">Tailwind CSS</span><span class="tag">Accessibility</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span>◭</span>Backend / Data</h3>
+        <div class="tags">
+          <span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">C / C++ (embedded)</span>
+          <span class="tag">REST APIs</span><span class="tag">Gemini / Groq / Claude</span><span class="tag">Data logging</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <h3><span>◮</span>Tools &amp; Cloud</h3>
+        <div class="tags">
+          <span class="tag">KiCad</span><span class="tag">Altium</span><span class="tag">Proteus</span>
+          <span class="tag">Arduino IDE</span><span class="tag">Git</span><span class="tag">Vercel</span>
+          <span class="tag">Supabase</span><span class="tag">Puppeteer</span><span class="tag">FFmpeg</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. EXPERIENCE ============ -->
+  <section id="experience">
+    <div class="reveal">
+      <span class="eyebrow">Experience</span>
+      <h2 class="sec-title">Where I've built</h2>
+    </div>
+    <div class="exp-grid">
+      <article class="glass reveal">
+        <div class="top">
+          <div>
+            <h3>Software &amp; AI Engineering Trainee</h3>
+            <div class="co">Arca PH</div>
+          </div>
+          <div class="when">2025 – Present</div>
+        </div>
+        <span class="badge">Current role</span>
+        <ul>
+          <li>Building <b style="color:var(--text)">Tester.io</b> end-to-end — a full product website plus a suite of working AI tools — designing, coding, and shipping with an AI-assisted workflow.</li>
+          <li>Shipped six tools and pages: TrendFinder (Gemini), YouTube Analyst (Google APIs), a Moodboard Generator (image AI), and polished product pages (Sights, TesterTech, Smart Watch Pro).</li>
+          <li>Working across the full stack — HTML/CSS/JS front ends, Node &amp; Python back ends, and Puppeteer/FFmpeg automation deployed on Vercel/Supabase.</li>
+        </ul>
+      </article>
+      <article class="glass reveal">
+        <div class="top">
+          <div>
+            <h3>Senior Hardware Design Engineer</h3>
+            <div class="co">Packetworx Inc. — Pasig City</div>
+          </div>
+          <div class="when">Aug 2024 – Jul 2025</div>
+        </div>
+        <span class="badge">Previous role</span>
+        <ul>
+          <li>Owned end-to-end IoT hardware design — component selection, schematic capture, PCB design, through functional validation.</li>
+          <li>Managed device prototyping to meet performance, reliability, and specification requirements.</li>
+          <li>Authored test plans and procedures, solving complex hardware problems through systematic analysis.</li>
+          <li>Produced full design documentation: schematics, PCB files, BOMs, Gerber/drill files, and validation reports.</li>
+          <li>Reviewed schematics &amp; PCB layouts for standards compliance and partnered cross-functionally on datasheets and manuals.</li>
+        </ul>
+      </article>
+      <article class="glass reveal">
+        <div class="top">
+          <div>
+            <h3>Hardware Design Engineer</h3>
+            <div class="co">Packetworx Inc. — Pasig City</div>
+          </div>
+          <div class="when">Apr 2021 – Aug 2024</div>
+        </div>
+        <ul>
+          <li>Designed and developed IoT hardware systems — circuit design, component selection, and schematic capture.</li>
+          <li>Ran thorough prototyping and validation to confirm functionality and performance.</li>
+          <li>Built test plans ensuring hardware reliability and conformance to specifications.</li>
+          <li>Troubleshot complex hardware issues and produced detailed design documentation for traceability.</li>
+          <li>Coordinated with software, firmware, QA, and network teams for smooth hardware integration.</li>
+        </ul>
+      </article>
+      <article class="glass reveal">
+        <div class="top">
+          <div>
+            <h3>Associate Software Engineer</h3>
+            <div class="co">Accenture Technology</div>
+          </div>
+          <div class="when">Mar 2020 – Oct 2020</div>
+        </div>
+        <ul>
+          <li>Built software solutions with cross-functional teams in an agile culture.</li>
+          <li>Completed SAP ABAP / HANA / FIORI, Japanese language, and service-desk soft-skill bootcamps.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 4. PROJECT HIGHLIGHTS (reel ABOVE grid) ============ -->
+  <section id="projects">
+    <div class="reveal">
+      <span class="eyebrow">Project Highlights</span>
+      <h2 class="sec-title">Tester.io — a site &amp; an AI toolkit</h2>
+      <p class="sec-sub">Built during my training at Arca PH — a full product website plus six working tools I designed and shipped, all live on Vercel. The reel previews them; each card opens the live page.</p>
+      <a class="btn btn-primary" style="margin-top:20px" href="https://arca-academy-activities-training-pv.vercel.app/" target="_blank" rel="noopener noreferrer">Visit the live site ↗</a>
+    </div>
+
+    <div class="reel-frame reveal">
+      <span class="reel-tag">● Live reel</span>
+      <video autoplay muted loop playsinline width="1280" height="720" poster="assets/screenshots/sights.png">
+        <source src="assets/reel.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="proj-grid">
+      <a class="proj-card reveal" href="https://arca-academy-activities-training-pv.vercel.app/Sights" target="_blank" rel="noopener noreferrer">
+        <div class="shot"><img src="assets/screenshots/sights.png" width="1440" height="6632" alt="Sights project screenshot" loading="lazy" /></div>
+        <div class="proj-body">
+          <h3>Sights</h3>
+          <p>An editorial travel feature with cinematic scroll storytelling.</p>
+          <div class="proj-meta"><span class="stack">HTML · CSS · JS</span><span class="arrow">Open live ↗</span></div>
+        </div>
+      </a>
+      <a class="proj-card reveal" href="https://arca-academy-activities-training-pv.vercel.app/TrendFinder" target="_blank" rel="noopener noreferrer">
+        <div class="shot"><img src="assets/screenshots/trendfinder.png" width="1440" height="900" alt="TrendFinder project screenshot" loading="lazy" /></div>
+        <div class="proj-body">
+          <h3>TrendFinder</h3>
+          <p>Searches trending articles across sources and extracts idea lists with Gemini.</p>
+          <div class="proj-meta"><span class="stack">Node · Gemini API</span><span class="arrow">Open live ↗</span></div>
+        </div>
+      </a>
+      <a class="proj-card reveal" href="https://arca-academy-activities-training-pv.vercel.app/YouTubeAnalyst" target="_blank" rel="noopener noreferrer">
+        <div class="shot"><img src="assets/screenshots/yta.png" width="1440" height="1480" alt="YouTube Analyst project screenshot" loading="lazy" /></div>
+        <div class="proj-body">
+          <h3>YouTube Analyst</h3>
+          <p>Analyzes trending videos and builds a Sheets + Slides report in one run.</p>
+          <div class="proj-meta"><span class="stack">Python · Google APIs</span><span class="arrow">Open live ↗</span></div>
+        </div>
+      </a>
+      <a class="proj-card reveal" href="https://arca-academy-activities-training-pv.vercel.app/FrontendGen" target="_blank" rel="noopener noreferrer">
+        <div class="shot"><img src="assets/screenshots/frontendgen.png" width="1440" height="1114" alt="Frontend Gen project screenshot" loading="lazy" /></div>
+        <div class="proj-body">
+          <h3>Moodboard Generator</h3>
+          <p>Generates six AI homepage concepts across three style directions.</p>
+          <div class="proj-meta"><span class="stack">JS · Image AI</span><span class="arrow">Open live ↗</span></div>
+        </div>
+      </a>
+      <a class="proj-card reveal" href="https://arca-academy-activities-training-pv.vercel.app/TesterTech" target="_blank" rel="noopener noreferrer">
+        <div class="shot"><img src="assets/screenshots/testertech.png" width="1440" height="8852" alt="TesterTech project screenshot" loading="lazy" /></div>
+        <div class="proj-body">
+          <h3>TesterTech</h3>
+          <p>A multi-device product showcase — eight devices, one design system.</p>
+          <div class="proj-meta"><span class="stack">HTML · CSS · JS</span><span class="arrow">Open live ↗</span></div>
+        </div>
+      </a>
+      <a class="proj-card reveal" href="https://arca-academy-activities-training-pv.vercel.app/product" target="_blank" rel="noopener noreferrer">
+        <div class="shot"><img src="assets/screenshots/product.png" width="1448" height="7827" alt="Smart Watch product page screenshot" loading="lazy" /></div>
+        <div class="proj-body">
+          <h3>Smart Watch Pro</h3>
+          <p>A precision-styled product landing with scroll-driven reveals.</p>
+          <div class="proj-meta"><span class="stack">HTML · CSS · JS</span><span class="arrow">Open live ↗</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ Hardware & PCB Design highlights ============ -->
+  <section id="hardware">
+    <div class="reveal">
+      <span class="eyebrow">Hardware Highlights</span>
+      <h2 class="sec-title">PCB &amp; hardware design</h2>
+      <p class="sec-sub">Before the web work, I designed production IoT boards end-to-end as a Hardware Design Engineer — schematic capture through multilayer layout, DRC, and Gerber output. A few of my designs:</p>
+    </div>
+    <div class="proj-grid">
+      <div class="pcb-card reveal">
+        <div class="shot"><img src="assets/pcb/iot-ups.jpg" width="1342" height="727" alt="IoT UPS power board PCB render" loading="lazy" /></div>
+        <div class="pcb-body">
+          <h3>IoT UPS Power Board</h3>
+          <p>Battery-backed power path — charge control with VSYS/VOUT/VBAT switching and screw-terminal I/O for always-on IoT nodes.</p>
+          <div class="pcb-meta"><span class="stack">Power management · KiCad</span><a class="pcb-req" href="mailto:aernestleanrivera@gmail.com?subject=Inquiry%3A%20IoT%20UPS%20Power%20Board">Schematic on request ↗</a></div>
+        </div>
+      </div>
+      <div class="pcb-card reveal">
+        <div class="shot"><img src="assets/pcb/air-quality.jpg" width="1079" height="822" alt="Air quality sensor PCB render" loading="lazy" /></div>
+        <div class="pcb-body">
+          <h3>Air-Quality Sensor Node</h3>
+          <p>Solar-powered wireless node sensing CO₂, dust and VOC — wireless SiP module with on-board battery and solar management.</p>
+          <div class="pcb-meta"><span class="stack">Wireless · Mixed-signal</span><a class="pcb-req" href="mailto:aernestleanrivera@gmail.com?subject=Inquiry%3A%20Air-Quality%20Sensor%20Node">Schematic on request ↗</a></div>
+        </div>
+      </div>
+      <div class="pcb-card reveal">
+        <div class="shot"><img src="assets/pcb/motor-logger.jpg" width="1144" height="788" alt="Three-phase motor logger PCB render" loading="lazy" /></div>
+        <div class="pcb-body">
+          <h3>3-Phase Motor Logger</h3>
+          <p>Field data logger with a graphic LCD UI, three probe inputs, and on-board calibration for three-phase motor measurement.</p>
+          <div class="pcb-meta"><span class="stack">Instrumentation · HMI</span><a class="pcb-req" href="mailto:aernestleanrivera@gmail.com?subject=Inquiry%3A%203-Phase%20Motor%20Logger">Schematic on request ↗</a></div>
+        </div>
+      </div>
+      <div class="pcb-card reveal">
+        <div class="shot"><img src="assets/pcb/punch-machine.jpg" width="1116" height="842" alt="Punch machine controller PCB render" loading="lazy" /></div>
+        <div class="pcb-body">
+          <h3>Arcade Punch-Machine Controller</h3>
+          <p>Coin-operated controller — wireless module, three-relay actuation, audio out and microSD, on a 12 V/5 V power supply.</p>
+          <div class="pcb-meta"><span class="stack">Embedded control · Power</span><a class="pcb-req" href="mailto:aernestleanrivera@gmail.com?subject=Inquiry%3A%20Arcade%20Punch-Machine%20Controller">Schematic on request ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 5. EDUCATION ============ -->
+  <section id="education">
+    <div class="reveal">
+      <span class="eyebrow">Education</span>
+      <h2 class="sec-title">Foundations</h2>
+    </div>
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="yr">2019</div>
+        <h3>BS in Electronics Engineering</h3>
+        <p>Bulacan State University — Malolos, Bulacan</p>
+        <div class="certs">
+          <span class="tag">Licensed Electronics Engineer (2019)</span>
+          <span class="tag">Licensed Electronics Technician (2019)</span>
+        </div>
+      </div>
+      <div class="edu-card reveal">
+        <div class="yr">Certifications</div>
+        <h3>LoRaWAN &amp; IoT</h3>
+        <p>The Things Certification — Fundamentals, Advanced, Network Management &amp; The Things Stack; Semtech Academy for LoRaWAN.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 6. CONTACT / CTA ============ -->
+  <section id="contact">
+    <div class="cta-panel reveal">
+      <span class="eyebrow" style="justify-content:center">Get in touch</span>
+      <h2 class="sec-title" style="margin-top:12px">Let's build something solid.</h2>
+      <p>Open to hardware design, embedded, and product engineering work — and the occasional web build.</p>
+      <div class="socials">
+        <a class="social" href="mailto:aernestleanrivera@gmail.com">✉ aernestleanrivera@gmail.com</a>
+        <a class="social" href="https://www.linkedin.com/in/aernest-lean-rivera-4296a0197" target="_blank" rel="noopener noreferrer">in LinkedIn</a>
+        <a class="social" href="https://github.com/lw1414/Tester-io-arca" target="_blank" rel="noopener noreferrer">⌥ GitHub</a>
+        <a class="social" href="assets/Resume_Rivera.pdf" target="_blank" rel="noopener noreferrer">⤓ Résumé (PDF)</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <a class="foot-brand" href="index.html"><span class="dot"></span>Aernest&nbsp;Rivera</a>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="about.html#projects">Projects</a>
+      <a href="about.html#hardware">Hardware</a>
+      <a href="about.html#contact">Contact</a>
+    </nav>
+    <div class="foot-social">
+      <a href="mailto:aernestleanrivera@gmail.com" aria-label="Email">✉</a>
+      <a href="https://www.linkedin.com/in/aernest-lean-rivera-4296a0197" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+      <a href="https://github.com/lw1414/Tester-io-arca" target="_blank" rel="noopener noreferrer" aria-label="GitHub">⌥</a>
+    </div>
+  </div>
+  <div class="foot-copy">© 2026 Aernest Lean Rivera · Designed &amp; built from scratch.</div>
+</footer>
+
+<script>
+  // Scroll-triggered reveals — transform/opacity only
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+      });
+    },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(e){io.observe(e);});
+  })();
+</script>
+</body>
+</html>

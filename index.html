@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aernest Lean Rivera — Hardware Engineer & Builder</title>
+<meta name="description" content="Aernest Lean Rivera — Licensed Electronics Engineer and builder. Hardware design, embedded systems, and web/AI products." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='10' fill='%2336e0c4'/%3E%3C/svg%3E" />
+<!-- SEO / social share — replace BASE_URL with your deployed domain -->
+<link rel="canonical" href="https://aernest-rivera.vercel.app/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Aernest Lean Rivera — Portfolio" />
+<meta property="og:title" content="Aernest Lean Rivera — Hardware Engineer & Builder" />
+<meta property="og:description" content="Licensed Electronics Engineer and builder — IoT/PCB hardware design plus web & AI products." />
+<meta property="og:url" content="https://aernest-rivera.vercel.app/" />
+<meta property="og:image" content="https://aernest-rivera.vercel.app/assets/og-cover.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Aernest Lean Rivera — Hardware Engineer & Builder" />
+<meta name="twitter:description" content="Licensed Electronics Engineer and builder — IoT/PCB hardware plus web & AI products." />
+<meta name="twitter:image" content="https://aernest-rivera.vercel.app/assets/og-cover.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#0c1018;--ink-2:#10151f;--line:rgba(255,255,255,.06);--line-2:rgba(255,255,255,.11);
+    --text:#eceff5;--muted:#868fa1;--faint:#767f91;--signal:#3ee0c4;--signal-ink:#04140f;--signal-soft:rgba(62,224,196,.12);
+    --sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--ink);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;min-height:100vh}
+  ::selection{background:var(--signal);color:var(--signal-ink)}
+  .skip{position:absolute;left:14px;top:-60px;z-index:200;font-family:var(--mono);font-size:.78rem;background:var(--signal);color:var(--signal-ink);padding:10px 16px;border-radius:8px;transition:top .2s ease}
+  .skip:focus{top:14px;outline:2px solid #fff;outline-offset:2px}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:radial-gradient(50% 45% at 50% -8%,rgba(62,224,196,.12),transparent 62%)}
+  nav,main{position:relative;z-index:1}
+  a{color:inherit;text-decoration:none}
+  h1{font-family:var(--sans);line-height:1.04;letter-spacing:-.045em;font-weight:700}
+  /* nav (shared with about.html, Home active) */
+  nav{position:sticky;top:0;backdrop-filter:blur(16px);background:rgba(12,16,24,.72);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:15px 28px;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-family:var(--mono);font-weight:700;font-size:.92rem;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+  .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px var(--signal-soft)}
+  .nav-links{display:flex;gap:2px;list-style:none}
+  .nav-links a{font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:8px 12px;border-radius:8px;transition:color .2s ease,background .2s ease}
+  .nav-links a:hover{color:var(--text);background:rgba(255,255,255,.04)}
+  .nav-links a:focus-visible{outline:2px solid var(--signal);outline-offset:2px}
+  .nav-links a.active{color:var(--signal)}
+  .nav-links a.active::after{content:"";display:block;height:2px;border-radius:2px;background:var(--signal);margin-top:5px}
+  /* hero */
+  .hero{max-width:var(--maxw);margin:0 auto;padding:128px 28px 90px;text-align:center}
+  .eyebrow{font-family:var(--mono);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--signal);font-weight:500;display:inline-flex;gap:9px;align-items:center}
+  .eyebrow::before{content:"//";opacity:.55;font-weight:700;letter-spacing:0}
+  .hero h1{font-size:clamp(2.6rem,9vw,5rem);font-weight:700;margin:20px 0}
+  .hero h1 .grad{color:var(--signal)}
+  .hero p{color:var(--muted);max-width:56ch;margin:0 auto;font-size:1.04rem}
+  .role{font-family:var(--mono);color:var(--signal);font-size:.82rem;letter-spacing:.01em;margin-top:10px}
+  .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+  .btn{font-family:var(--mono);font-weight:500;font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;padding:14px 24px;border-radius:10px;display:inline-flex;align-items:center;gap:8px;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease;border:1px solid transparent}
+  .btn:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+  .btn-primary{background:var(--signal);color:var(--signal-ink);box-shadow:0 16px 34px -16px rgba(62,224,196,.55)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 22px 40px -16px rgba(62,224,196,.65)}
+  .btn-ghost{border-color:var(--line-2);color:var(--text);background:transparent}
+  .btn-ghost:hover{transform:translateY(-2px);background:rgba(255,255,255,.04);border-color:var(--signal)}
+  .mini{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:48px}
+  .mini span{font-family:var(--mono);font-size:.72rem;padding:9px 13px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--muted)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav aria-label="Primary">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="dot"></span>Aernest&nbsp;Rivera</a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="about.html#projects">Projects</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<main id="main" tabindex="-1">
+  <section class="hero">
+    <span class="eyebrow">Hardware Engineer · Builder</span>
+    <h1>I design <span class="grad">hardware</span><br>and build products.</h1>
+    <p class="role">Aernest Lean Rivera — Licensed Electronics Engineer</p>
+    <p style="margin-top:16px">Senior Hardware Design Engineer, now training at <b style="color:var(--text)">Arca PH</b> — working across IoT hardware, embedded systems, and the web &amp; AI tools I ship. Get the full story on my portfolio.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="about.html">View Portfolio →</a>
+      <a class="btn btn-ghost" href="assets/Resume_Rivera.pdf" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+    </div>
+    <div class="mini">
+      <span>IoT Hardware &amp; PCB</span><span>Embedded C/C++</span><span>Node · Python</span><span>LoRaWAN certified</span>
+    </div>
+  </section>
+</main>
+</body>
+</html>

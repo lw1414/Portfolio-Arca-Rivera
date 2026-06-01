@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+node_modules/
+
+# Local working & planning files (not part of the deployed site)
+/Portfolio Requirements.pdf
+/Review.pdf
+/PORTFOLIO_PROMPTS.md
+/PORTFOLIO_REQUIREMENTS.md
+/PCB design project/
+/Profile Photo.jpg
+/Resume_Rivera.pdf
+
+# Dev tooling / verification artifacts
+/verify.mjs
+/verify-about.png
+/verify-index.png
+/.reelframes/
